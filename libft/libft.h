@@ -6,7 +6,7 @@
 /*   By: nakamotodaichi <nakamotodaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:56:28 by nakamotodai       #+#    #+#             */
-/*   Updated: 2026/05/29 00:12:05 by nakamotodai      ###   ########.fr       */
+/*   Updated: 2026/05/29 09:02:39 by nakamotodai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ size_t ft_putstr(char *s);
 int ft_putnbr_u(unsigned int n);
 int ft_puthex_lit(unsigned int n);
 int ft_puthex_big(unsigned int n);
+int ft_puthex_p(void *n);
 
 #endif

@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = libft/ft_putchar.c libft/ft_puthex_big.c libft/ft_puthex_lit.c libft/ft_putnbr_u.c libft/ft_putnbr.c libft/ft_putstr.c libft/ft_strchr.c\
+SRCS = libft/ft_putchar.c libft/ft_puthex_big.c libft/ft_puthex_lit.c libft/ft_putnbr_u.c libft/ft_putnbr.c libft/ft_putstr.c libft/ft_strchr.c libft/ft_puthex_p.c\
 		ft_printf_utils.c ft_printf.c
 
 OBJS = $(SRCS:.c=.o)

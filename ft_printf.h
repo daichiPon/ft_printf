@@ -6,7 +6,7 @@
 /*   By: nakamotodaichi <nakamotodaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 04:11:41 by nakamotodai       #+#    #+#             */
-/*   Updated: 2026/05/28 12:37:49 by nakamotodai      ###   ########.fr       */
+/*   Updated: 2026/05/29 08:31:09 by nakamotodai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ typedef struct p_printf
 #include <stdio.h>
 #include "libft/libft.h"
 
-int check_format(t_printf p,va_list args);
+int check_format(t_printf p,va_list *args);
 
 #endif
