@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nakamotodaichi <nakamotodaichi@student.    +#+  +:+       +#+        */
+/*   By: dnakamot <dnakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 16:16:05 by nakamotodai       #+#    #+#             */
-/*   Updated: 2026/05/28 12:27:45 by nakamotodai      ###   ########.fr       */
+/*   Updated: 2026/05/30 19:38:35 by dnakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-const char *ft_strchr(const char *s, int c)
+#include "utils.h"
+
+const char	*ft_strchr(const char *s, int c)
 {
-    while (*s != (char)c)
-    {
-        if (*s == '\0')
-            return NULL;
-        s++;
-    }
-    return s;
+	while (*s != (char)c)
+	{
+		if (*s == '\0')
+			return (NULL);
+		s++;
+	}
+	return (s);
 }
 
 // int main(void)

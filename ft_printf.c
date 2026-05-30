@@ -3,40 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nakamotodaichi <nakamotodaichi@student.    +#+  +:+       +#+        */
+/*   By: dnakamot <dnakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 04:07:23 by nakamotodai       #+#    #+#             */
-/*   Updated: 2026/05/29 18:14:52 by nakamotodai      ###   ########.fr       */
+/*   Updated: 2026/05/29 21:59:00 by dnakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+static int	check_res(int res, int *count)
 {
-    t_printf    p;
-    va_list     args;
-    int         count;
+	if (res < 0)
+		return (-1);
+	*count += res;
+	return (0);
+}
 
-    count = 0;
-    va_start(args, format);
-    while (*format)
-    {
-        if (*format == '%')
-        {
-            format++;
-            p.now_format = format;
-            count += check_format(p, &args);
-        }
-        else
-        {
-            write(1, format, 1);
-            count++;
-        }
-        format++;
-    }
-    va_end(args);
-    return count;
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+	int		count;
+	int		res;
+
+	count = 0;
+	va_start(args, format);
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			res = check_format(*++format, &args);
+			if (check_res(res, &count) < 0)
+				return (-1);
+		}
+		else
+		{
+			res = ft_putchar(*format);
+			if (check_res(res, &count) < 0)
+				return (-1);
+		}
+		format++;
+	}
+	va_end(args);
+	return (count);
 }
 
 // int main(void)

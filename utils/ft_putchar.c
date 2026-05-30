@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex_lit.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nakamotodaichi <nakamotodaichi@student.    +#+  +:+       +#+        */
+/*   By: dnakamot <dnakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 23:52:32 by nakamotodai       #+#    #+#             */
-/*   Updated: 2026/05/29 00:10:23 by nakamotodai      ###   ########.fr       */
+/*   Created: 2026/05/28 11:43:38 by nakamotodai       #+#    #+#             */
+/*   Updated: 2026/05/30 19:38:35 by dnakamot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-int ft_puthex_lit(unsigned int n)
-{
-    int  count;
-    char base[] = "0123456789abcdef";
+#include "utils.h"
 
-    count = 0;
-    if (n >= 16)
-        count += ft_puthex_lit(n / 16);
-    write(1, &base[n % 16], 1);
-    count++;
-    return (count);
+int	ft_putchar(int c)
+{
+	return (write(1, &c, 1));
 }
