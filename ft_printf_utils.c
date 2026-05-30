@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnakamot <dnakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nakamotodaichi <nakamotodaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 09:50:12 by nakamotodai       #+#    #+#             */
-/*   Updated: 2026/05/29 21:44:03 by dnakamot         ###   ########.fr       */
+/*   Updated: 2026/05/31 00:42:20 by nakamotodai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int	check_format(char format, va_list *args)
 		return (ft_puthex_p(va_arg(*args, void *)));
 	else if (format == '%')
 		return (ft_putchar('%'));
-	return (0);
+	return (-1);
 }
