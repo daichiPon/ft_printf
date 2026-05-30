@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthex_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dnakamot <dnakamot@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: nakamotodaichi <nakamotodaichi@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 08:54:16 by nakamotodai       #+#    #+#             */
-/*   Updated: 2026/05/30 19:38:35 by dnakamot         ###   ########.fr       */
+/*   Updated: 2026/05/31 01:48:28 by nakamotodai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	ft_puthex_p(void *n)
 {
 	int				count;
 	int				check;
+	int 			res;
 	unsigned long	addr;
 
 	addr = (unsigned long)n;
@@ -43,7 +44,10 @@ int	ft_puthex_p(void *n)
 	if (check < 0)
 		return (check);
 	count += 2;
-	count += ft_puthex_addr(addr);
+	res=ft_puthex_addr(addr);
+	if(res<0)
+		return -1;
+	count += res;
 	return (count);
 }
 
